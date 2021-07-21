@@ -16,7 +16,6 @@
 .prettierignore
 
 .vscode/
-sass/
 *.old
 style-guide.md
 design/

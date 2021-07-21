@@ -83,7 +83,7 @@ body {
   height: 196px;
   outline: 2px solid white;
   position: relative;
-  top: 200px;
+  top: 194px;
   left: 24px;
 }
 @media screen and (min-width: 1440px) {
@@ -246,7 +246,7 @@ body {
     flex-direction: row;
     width: 380px;
     height: 24px;
-    top: 12px;
+    top: 6px;
     left: 755px;
   }
 }
