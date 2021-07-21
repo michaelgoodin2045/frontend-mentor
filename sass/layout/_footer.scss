@@ -1,0 +1,123 @@
+@use '../base/' as *;
+@use '../utilities/' as u;
+
+.footer {
+  width: 375px;
+  height: 470px;
+  background: $clr--black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include u.breakpoint(desktop) {
+    width: 1440px;
+    height: 160px;
+    margin-top: 184px;
+  }
+  & .footer-box {
+    width: 272px;
+    height: 358px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    @include u.breakpoint(desktop) {
+      width: 1110px;
+      height: 73px;
+      flex-direction: row;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    & .footer-logo {
+      width: 144px;
+      height: 24px;
+      & img {
+        width: 144px;
+      }
+      @include u.breakpoint(desktop) {
+        order: 1;
+        width: 966px;
+      }
+    }
+    & .footer-list {
+      width: 59px;
+      height: 189px;
+      margin-top: 32px;
+      font-family: $ff--alata;
+      font-size: 15px;
+      line-height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      @include u.breakpoint(desktop) {
+        order: 3;
+        flex-direction: row;
+        width: 380px;
+        margin-top: 22px;
+      }
+      & a {
+        text-decoration: none;
+        color: $clr--white;
+        &:hover {
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            display: block;
+            height: 2px;
+            background-color: $clr--white;
+            bottom: -8px;
+            @include u.breakpoint(desktop) {
+              left: 0;
+              right: 0;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+    & .footer-icons {
+      width: 144px;
+      height: 24px;
+      margin-top: 48px;
+      color: $clr--white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      @include u.breakpoint(desktop) {
+        order: 2;
+        margin-top: 0;
+      }
+      & a:hover {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 24px;
+          height: 2px;
+          background-color: $clr--white;
+          bottom: -8px;
+          display: block;
+        }
+      }
+    }
+    & .footer-mark {
+      width: 272px;
+      height: 25px;
+      color: $clr--dark-gray;
+      font-family: $ff--alata;
+      font-size: 15px;
+      line-height: 25px;
+      @include u.breakpoint(desktop) {
+        order: 4;
+        width: 730px;
+        margin-top: 22px;
+        text-align: right;
+      }
+    }
+  }
+}

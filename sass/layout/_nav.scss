@@ -1,0 +1,154 @@
+@use "../base/" as *;
+@use '../utilities/' as u;
+
+.nav {
+  width: 327px;
+  height: 24px;
+  position: relative;
+  top: 40px;
+  left: 24px;
+  @include u.breakpoint(desktop) {
+    top: 64px;
+    left: 165px;
+    height: 32px;
+  }
+  & .logo {
+    width: 144px;
+    @include u.breakpoint(desktop) {
+      width: 192px;
+    }
+    & a {
+      text-decoration: none;
+    }
+    & img {
+      zoom: 75%;
+      @include u.breakpoint(desktop) {
+        zoom: 100%;
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: -24px;
+  left: 303px;
+  width: 24px;
+  height: 15px;
+  cursor: pointer;
+  z-index: 10;
+  @include u.breakpoint(desktop) {
+    display: none;
+  }
+  & .bar {
+    width: 24px;
+    height: 2px;
+    background-color: $clr--white;
+    transition: all 300ms ease-in;
+  }
+}
+
+.toggle .bar.top {
+  transform: rotate(-405deg) translate(-5px, 6px);
+}
+
+.toggle .bar.middle {
+  transform: translateX(100px);
+}
+
+.toggle .bar.bottom {
+  transform: rotate(405deg) translate(-5px, -6px);
+}
+
+.navbar {
+  position: absolute;
+  top: -40px;
+  left: -24px;
+  width: 375px;
+  height: 667px;
+  background-color: $clr--black;
+  font-family: $ff--josefin;
+  display: none;
+  z-index: 1;
+  @include u.breakpoint(desktop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+    width: 380px;
+    height: 25px;
+    font-family: $ff--alata;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  & .logo {
+    width: 144px;
+    position: relative;
+    top: 40px;
+    left: 24px;
+    @include u.breakpoint(desktop) {
+      display: none;
+    }
+    & a {
+      text-decoration: none;
+    }
+    & img {
+      zoom: 75%;
+    }
+  }
+  & .nav-links {
+    position: relative;
+    top: 223px;
+    left: 24px;
+    width: 129px;
+    height: 221px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include u.breakpoint(desktop) {
+      flex-direction: row;
+      width: 380px;
+      height: 24px;
+      top: 12px;
+      left: 755px;
+    }
+    & .nav-link {
+      font-size: 24px;
+      line-height: 25px;
+      text-transform: uppercase;
+      @include u.breakpoint(desktop) {
+        font-size: 15px;
+        line-height: 25px;
+        text-transform: none;
+      }
+    }
+    & a {
+      text-decoration: none;
+      color: $clr--white;
+      &:hover {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 24px;
+          display: block;
+          height: 2px;
+          background-color: $clr--white;
+          bottom: -8px;
+          @include u.breakpoint(desktop) {
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}

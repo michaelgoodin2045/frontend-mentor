@@ -1,0 +1,74 @@
+@use '../base/' as *;
+@use '../utilities/' as u;
+
+.leader {
+    display: grid;
+    width: 375px;
+    height: 623px;
+    grid-template-areas: 
+    ".... .... ...."
+    ".... vr-image ...."
+    ".... leader-blurb ....";
+    grid-template-rows: [row1-start] 96px [row1-end row2-start] 224px [row2-end row3-start] 303px [row3-end];
+    grid-template-columns: 24px 327px 24px;
+    @include u.breakpoint(desktop) {
+        display: block;
+        width: 1111px;
+        height: 500px;
+        margin-top: 160px;
+        margin-left: 164px;
+    }
+}
+
+.vr-image {
+    grid-area: vr-image;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/mobile/image-interactive.jpg");
+    background-size: cover;
+    @include u.breakpoint(desktop) {
+        content: url("../images/desktop/image-interactive.jpg");
+        width: 731px;
+    }
+}
+
+.leader-blurb {
+    grid-area: leader-blurb;
+    width: 100%;
+    margin-top: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+    @include u.breakpoint(desktop) {
+        width: 541px;
+        height: 317px;
+        position: relative;
+        top: -363px;
+        left: 569px;
+        background-color: $clr--white;
+        padding-left: 96px;
+        padding-top:  96px;
+        padding-right: 0;
+    }
+    & .leader-title {
+        font-family: $ff--josefin;
+        font-size: 32px;
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 16px;
+        @include u.breakpoint(desktop) {
+            text-align: left;
+            font-size: 48px;
+            padding-bottom: 25px;
+        }
+    }
+    & .leader-text {
+        font-family: $ff--alata;
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 400;
+        text-align: center;
+        color: $clr--vary-dark-gray;
+        @include u.breakpoint(desktop) {
+            text-align: left;
+        }
+    }
+}

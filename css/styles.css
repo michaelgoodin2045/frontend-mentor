@@ -13,8 +13,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-          text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 footer, header, nav, section, main {
@@ -84,7 +83,7 @@ body {
   height: 196px;
   outline: 2px solid white;
   position: relative;
-  top: 226px;
+  top: 200px;
   left: 24px;
 }
 @media screen and (min-width: 1440px) {
@@ -209,7 +208,9 @@ body {
     position: relative;
     width: 380px;
     height: 25px;
-    font-size: "Alata", sans-serif;
+    font-family: "Alata", sans-serif;
+    font-size: 15px;
+    line-height: 25px;
   }
 }
 .navbar .logo {
@@ -245,8 +246,8 @@ body {
     flex-direction: row;
     width: 380px;
     height: 24px;
-    top: 10px;
-    left: 750px;
+    top: 12px;
+    left: 755px;
   }
 }
 .navbar .nav-links .nav-link {
@@ -642,6 +643,7 @@ body {
     order: 3;
     flex-direction: row;
     width: 380px;
+    margin-top: 22px;
   }
 }
 .footer .footer-box .footer-list a {
@@ -707,7 +709,7 @@ body {
   .footer .footer-box .footer-mark {
     order: 4;
     width: 730px;
-    margin-top: 30px;
+    margin-top: 22px;
     text-align: right;
   }
 }

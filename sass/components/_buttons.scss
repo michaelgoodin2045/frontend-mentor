@@ -1,0 +1,27 @@
+@use '../base/' as *;
+@use '../utilities/' as u;
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 157px;
+    height: 40px;
+    border: 1px solid $clr--black;
+    margin-top: 34px;
+    text-decoration: none;
+    font-family: $ff--alata;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: $clr--black;
+    &:hover {
+        color: $clr--white;
+        background-color: $clr--black;
+    }
+    @include u.breakpoint(desktop) {
+        margin-top: 0;
+    }
+      
+}

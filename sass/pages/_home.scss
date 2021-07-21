@@ -1,0 +1,14 @@
+@use '../base/' as *;
+@use '../utilities/' as u;
+
+.container {
+    width: 375px;
+    height: 3217px;
+    background: $clr--white;
+    margin: 0 auto;
+    @include u.breakpoint(desktop) {
+        width: 1440px;
+        height: 2896px;
+        overflow-y: hidden;
+    }
+}
